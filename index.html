@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de Estudiantes</title>
+<style>
+  
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .boton-enviar {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .boton-enviar:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Matrícula</th>
+      <th>Notas</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" name="nombre" placeholder="Nombre"></td>
+      <td><input type="text" name="apellido" placeholder="Apellido"></td>
+      <td><input type="text" name="matricula" placeholder="Matrícula"></td>
+      <td><input type="text" name="notas" placeholder="Notas"></td>
+      <td>
+        <select>
+          <option value="editar">Editar</option>
+          <option value="limpiar">Eliminar</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="boton-enviar" id="boton-enviar">Enviar</button>
+
+
+<script>
+document.getElementById('boton-enviar').addEventListener('click', function() {
+    var nombreInput = document.querySelector('input[name="nombre"]');
+    var apellidoInput = document.querySelector('input[name="apellido"]');
+    var matriculaInput = document.querySelector('input[name="matricula"]');
+    var notasInput = document.querySelector('input[name="notas"]');
+    
+    var nombre = nombreInput.value;
+    var apellido = apellidoInput.value;
+    var matricula = matriculaInput.value;
+    var notas = notasInput.value;
+    
+    console.log("Nombre: " + nombre);
+    console.log("Apellido: " + apellido);
+    console.log("Matrícula: " + matricula);
+    console.log("Notas: " + notas);
+    
+    // Limpiar los campos de entrada
+    nombreInput.value = "";
+    apellidoInput.value = "";
+    matriculaInput.value = "";
+    notasInput.value = "";
+});
+</script>
+
+</body>
+</html>
+
+
